@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
-export default function Dashboard() {
-  const session = useSession();
-  const supabase = useSupabaseClient();
+export default function Dashboard({ session, supabase }) {
   const [transcript, setTranscript] = useState('');
   const [summary, setSummary] = useState('');
   const [tasks, setTasks] = useState([]);
